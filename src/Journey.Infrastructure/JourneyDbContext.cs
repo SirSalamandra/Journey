@@ -11,5 +11,12 @@ namespace Journey.Infrastructure
         {
             optionsBuilder.UseSqlite("Data Source=C:\\Workspace\\salamandra\\NLW16-Journey\\JourneyDatabase.db");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Activity>().ToTable("Activities");
+        }
     }
 }
